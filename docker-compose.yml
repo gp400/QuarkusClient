@@ -1,0 +1,15 @@
+# docker-compose.yml
+
+services:
+  db:
+    image: postgres:latest
+    container_name: Quarkus_Bank
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: Banreservas
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/10-create-mydb.sql
