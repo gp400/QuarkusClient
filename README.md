@@ -6,45 +6,45 @@ Esta API se encarga de realizar un CRUD de clientes, teniendo los campos primer 
 2. Ejecuta `./mvnw quarkus:dev` para correr el projecto. Por defecto toma el puerto 8080.
 
 # Endpoints
-## GET /Client
+### GET /Client
  - Retorna un 200 todos los clientes existentes en la base de datos
 
-## GET /Client/{id}
+### GET /Client/{id}
  - Retorna un 200 con el cliente en cuestion
  - Retorna un 404 si no encuentra un cliente con el id enviado
 
-## GET /Client/Pais/{pais}
+### GET /Client/Pais/{pais}
  - Retorna un 200 con todos los clientes que tengan el país enviado
 
-## POST /Client
+### POST /Client
  - Retorna un 201 cuando el cliente se creo correctamente
  - Retorna un 400 si el json enviado no es valido
  - Retorna un 400 si el pais no es valido
 
-## PUT /Client
+### PUT /Client
  - Retorna un 200 cuando el cliente se edito correctamente
  - Retorna un 400 si el json enviado no es valido
  - Retorna un 400 si el pais no es valido
  - Retorna un 404 si no encuentra un cliente con el id evniado
 
-## DELETE /Client/{id}
+### DELETE /Client/{id}
  - Retorna un 200
  - Retorna un 404 si no encuentra un cliente con el id enviado
 
 # Ejemplos cURL
-## GET /Client
+### GET /Client
 curl --location 'http://localhost:8080/Client' \
 --data ''
 
-## GET /Client/{id}
+### GET /Client/{id}
 curl --location 'http://localhost:8080/Client/1' \
 --data ''
 
-## GET /Client/Pais/{pais}
+### GET /Client/Pais/{pais}
 curl --location 'http://localhost:8080/Client/Pais/do' \
 --data ''
 
-## POST /Client
+### POST /Client
 curl --location 'http://localhost:8080/Client' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -58,7 +58,7 @@ curl --location 'http://localhost:8080/Client' \
     "Pais": "do"
 }'
 
-## PUT /Client
+### PUT /Client
 curl --location --request PUT 'http://localhost:8080/Client' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -69,7 +69,7 @@ curl --location --request PUT 'http://localhost:8080/Client' \
     "Pais": "do"
 }'
 
-## DELETE /Client/{id}
+### DELETE /Client/{id}
 curl --location --request DELETE 'http://localhost:8080/Client/52' \
 --data ''
 

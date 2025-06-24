@@ -29,7 +29,7 @@ public class ClienteDto {
 	public String Direccion;
 	
 	@NotBlank(message = "El Telefono es requerido")
-	@Size(min = 10, max = 12, message = "El telefono no es valido") // Por si incluye o no guiones
+	@Size(min = 10, max = 12, message = "El telefono no	 es valido") // Por si incluye o no guiones
 	public String Telefono;
 	
 	@NotBlank(message = "El Codigo es requerido")
