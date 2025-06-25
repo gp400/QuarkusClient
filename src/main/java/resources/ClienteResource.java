@@ -35,7 +35,7 @@ public class ClienteResource {
 	@GET
 	@Path("/Pais/{pais}")
 	public Response getByCountry(@PathParam("pais")
-							@Size(min = 2, max = 3, message = "El Codigo no es valido")
+							@Size(min = 2, max = 3, message = "El codigo del pais no es valido")
 							String pais) {
 		List<Cliente> clientes = clienteService.getClientsByCountry(pais);
 		return Response.ok(clientes).build();

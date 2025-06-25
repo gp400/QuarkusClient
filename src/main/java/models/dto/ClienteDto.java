@@ -21,18 +21,22 @@ public class ClienteDto {
 	
 	public String SegundoApellido;
 	
-	@NotBlank(message = "El Correo es requerido")
+	@NotBlank(groups = ClienteValidationGroup.Create.class,
+			message = "El Correo es requerido")
 	@Email(message = "El Correo no es valido")
 	public String Correo;
 	
-	@NotBlank(message = "La Direccion es requerida")
+	@NotBlank(groups = ClienteValidationGroup.Create.class,
+			message = "La Direccion es requerida")
 	public String Direccion;
 	
-	@NotBlank(message = "El Telefono es requerido")
-	@Size(min = 10, max = 12, message = "El telefono no	 es valido") // Por si incluye o no guiones
+	@NotBlank(groups = ClienteValidationGroup.Create.class,
+			message = "El Telefono es requerido")
+	@Size(min = 10, max = 12, message = "El telefono no es valido") // Por si incluye o no guiones
 	public String Telefono;
 	
-	@NotBlank(message = "El Codigo es requerido")
+	@NotBlank(groups = ClienteValidationGroup.Create.class,
+			message = "El Codigo es requerido")
 	@Size(min = 2, max = 3, message = "El Codigo no es valido")
 	public String Pais;
 }

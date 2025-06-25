@@ -59,12 +59,16 @@ public class ClienteService {
 		
 		if (cliente == null) throw new Exception("No existe un cliente con ese Id");
 
-		String gentilicio = this.getGentilicio(clienteDto.Pais);
-		cliente.Correo = clienteDto.Correo;
-		cliente.Direccion = clienteDto.Direccion;
-		cliente.Telefono = clienteDto.Telefono;
-		cliente.Pais = clienteDto.Pais;
-		cliente.Gentilicio = gentilicio;
+		if (clienteDto.Correo != null) cliente.Correo = clienteDto.Correo;
+		if (clienteDto.Direccion != null) cliente.Direccion = clienteDto.Direccion;
+		if (clienteDto.Telefono != null) cliente.Telefono = clienteDto.Telefono;
+		if (clienteDto.Pais != null) {
+			String gentilicio = this.getGentilicio(clienteDto.Pais);
+			System.out.println(gentilicio);
+			
+			cliente.Pais = clienteDto.Pais;
+			cliente.Gentilicio = gentilicio;
+		}
 		
 		return cliente;
 	}

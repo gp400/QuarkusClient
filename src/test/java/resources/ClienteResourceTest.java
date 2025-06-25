@@ -123,7 +123,7 @@ public class ClienteResourceTest {
 		// Valido
 		Cliente cliente = this.createCliente(data, 201);
 		Map<String, Object> payload = new HashMap<>(data);
-		payload.put("PrimerNombre", "NombreNuevo");
+		payload.put("Correo", "correoNuevo@gmail.com");
 		payload.put("Id", cliente.Id);
 		
 	    given()
@@ -155,13 +155,11 @@ public class ClienteResourceTest {
 	    		.log().body()
 	    		.statusCode(404);
 	    
-	    // Invalido - Campos requeridos
+	    // Invalido - Campos invalidos
 	    payload = new HashMap<>(data);
-		payload.put("PrimerNombre", null);
-		payload.put("SegundoNombre", null);
-		payload.put("SegundoApellido", null);
 		payload.put("Telefono", "829-387-56412");
 		payload.put("Pais", "dona");
+		payload.put("Correo", "correo");
 		
 	    given()
 	    	.body(payload).contentType(ContentType.JSON)
