@@ -1,5 +1,5 @@
 # Descripcion general
-Esta API se encarga de realizar un CRUD de clientes, teniendo los campos primer nombre, segundo nombre, primer apellido, correo, dirección, teléfono, país (código ISO 3166) y gentilicio; Siendo los unicos campos opcionales, segundo nombre y segundo apellido. El gentilicio se obtiene de una API de terceros basado en el país enviado. Los datos son persistidos en una base de datos postgres.
+Esta API se encarga de realizar un CRUD de clientes, almacena los campos primer nombre, segundo nombre, primer apellido, correo, dirección, teléfono, país (código ISO 3166) y gentilicio; Siendo los unicos campos opcionales el segundo nombre y el segundo apellido. El gentilicio se obtiene de una API de terceros basado en el país enviado. Los datos son persistidos en una base de datos postgres.
 
 # QuickStart
 1. Ejecuta `docker compose up -d` para crear la base de datos.
